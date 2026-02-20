@@ -22,7 +22,9 @@ url: ""
 baseurl: ""
 
 # Asset Configuration
-apple_touch_icon: "/assets/img/profile.png"
+# apple_touch_icon: update to /assets/img/profile.png once a profile photo is added
+apple_touch_icon: "/assets/img/OGImg.png"
+favicon: "/assets/img/favicon.svg"
 css_file: "/assets/css/style.css"
 
 # Menu — empty; navigation is handled by the landing page card grid
@@ -71,7 +73,7 @@ privatelinks:
   msg: "This note hasn't been published yet."
 
 # Math rendering
-katex: true
+katex: false
 
 # Exclude from processing
 exclude:

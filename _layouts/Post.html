@@ -125,6 +125,12 @@
                                 <a href="{{ site.baseurl }}{{post_items.url}}">
                                     <p>{{ post_items.title }}</p>
                                 </a>
+                                {%- assign words = post_items.content | number_of_words -%}
+                                {%- assign read_mins = words | divided_by: site.reading_speed -%}
+                                {%- if read_mins == 0 -%}{%- assign read_mins = 1 -%}{%- endif -%}
+                                <p class="post-meta">{{ post_items.date | date: "%b %-d, %Y" }} &middot; {{ read_mins }} min read</p>
+                                {%- assign excerpt_text = post_items.content | strip_html | strip_newlines | truncate: 200 -%}
+                                <p class="post-excerpt">{{ excerpt_text }}</p>
                             </div>
                     {%- endif -%}
                 {%- endfor -%}
