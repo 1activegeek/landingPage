@@ -5,7 +5,7 @@ title: Shawn Mix
 ---
 
 <p>
-  <strong>Shawn Mix</strong><br>
+  <strong class="site-title">Shawn Mix</strong><br>
   Technology leader, builder, and tinkerer. I work at the intersection of infrastructure, platform engineering, and product strategy — focused on building systems and teams that deliver real value. <span class="small-link"><a href="/about">more</a></span>
 </p>
 

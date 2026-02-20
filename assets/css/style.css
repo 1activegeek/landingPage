@@ -163,6 +163,10 @@ a:hover {
 /* =========================================================
    LANDING PAGE
    ========================================================= */
+.site-title {
+  color: var(--title);
+}
+
 .small-link {
   font-size: var(--scale-xs);
   opacity: 0.7;
@@ -376,14 +380,14 @@ a:hover {
   justify-content: center;
   border: none;
   background: none;
-  color: var(--text);
+  color: var(--title);
   cursor: pointer;
   padding: 0;
   margin: 0;
 }
 
 .theme-toggle:hover {
-  color: var(--text);
+  color: var(--title);
 }
 
 .theme-toggle svg {
@@ -610,6 +614,12 @@ img {
   color: inherit;
 }
 
+.notelist-feed a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
 /* Kill the global p margin inside feed items */
 .notelist-feed p {
   margin-bottom: 0;
@@ -624,6 +634,12 @@ img {
 .list-feed a {
   text-decoration: none;
   color: var(--title);
+}
+
+.list-feed a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 /* =========================================================
