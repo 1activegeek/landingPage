@@ -1,0 +1,37 @@
+<nav class="nav">
+  <div class="nav-left">
+    <a href="{{ site.baseurl }}/" aria-label="Home">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="8" width="16" height="16" rx="4" />
+      </svg>
+    </a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg viewBox="0 0 14 14" width="17.5" height="17.5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="7" cy="7" r="5"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<script>
+  const themeToggle = document.querySelector('.theme-toggle');
+  const root = document.documentElement;
+
+  function setTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+
+  themeToggle.addEventListener('click', function () {
+    root.classList.add('theme-transition');
+    document.body.classList.add('theme-transition');
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    setTheme(isDark ? 'light' : 'dark');
+    setTimeout(function () {
+      root.classList.remove('theme-transition');
+      document.body.classList.remove('theme-transition');
+    }, 300);
+  });
+</script>
