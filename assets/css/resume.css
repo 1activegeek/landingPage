@@ -1,0 +1,387 @@
+/* =========================================================
+   RESUME PAGE — scoped entirely under .resume-layout
+   No styles here affect any other page.
+   ========================================================= */
+
+/* ---- Outer wrapper — breaks out of the 48rem single-column max ---- */
+.resume-layout {
+  width: 100%;
+}
+
+/* ---- Two-column grid: 2fr left | 1fr right ---- */
+.resume-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+  margin-top: var(--space-lg);
+}
+
+/* =========================================================
+   LEFT COLUMN — main content
+   ========================================================= */
+.resume-main {
+  min-width: 0; /* prevent grid blowout */
+}
+
+/* Section spacing */
+.resume-section {
+  margin-bottom: calc(var(--space-xl) * 1.25);
+}
+
+.resume-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Section heading — icon + label side by side */
+.resume-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--scale-sm);
+  font-weight: var(--weight-bold);
+  color: var(--text);
+  opacity: 0.75;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--border);
+}
+
+.resume-section-heading svg {
+  flex-shrink: 0;
+  color: var(--text);
+  opacity: 1; /* icon is already inside the 0.5 opacity parent — inherit OK */
+}
+
+/* ---- About ---- */
+.resume-about p {
+  margin-bottom: 0;
+  line-height: var(--line-height-loose);
+}
+
+/* ---- Experience entries ---- */
+.resume-job {
+  margin-bottom: var(--space-lg);
+}
+
+.resume-job:last-child {
+  margin-bottom: 0;
+}
+
+.resume-job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin-bottom: 0.15rem;
+}
+
+.resume-job-role {
+  font-size: var(--scale-base);
+  font-weight: var(--weight-bold);
+  color: var(--title);
+  margin-bottom: 0;
+}
+
+.resume-job-time {
+  font-size: var(--scale-sm);
+  color: var(--text);
+  opacity: 0.5;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.resume-job-company {
+  font-size: var(--scale-sm);
+  color: var(--text);
+  opacity: 0.6;
+  margin-bottom: var(--space-xs);
+}
+
+.resume-job-details {
+  font-size: var(--scale-sm);
+  color: var(--text);
+  opacity: 0.75;
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-xs);
+}
+
+.resume-job-bullets {
+  margin-bottom: 0;
+  padding-left: var(--space-md);
+}
+
+.resume-job-bullets li {
+  font-size: var(--scale-sm);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: 0.25rem;
+  color: var(--text);
+}
+
+/* ---- Awards ---- */
+.resume-award {
+  margin-bottom: var(--space-sm);
+}
+
+.resume-award:last-child {
+  margin-bottom: 0;
+}
+
+.resume-award-title {
+  font-size: var(--scale-base);
+  font-weight: var(--weight-bold);
+  color: var(--title);
+  margin-bottom: 0.1rem;
+}
+
+.resume-award-org {
+  font-size: var(--scale-sm);
+  color: var(--text);
+  opacity: 0.6;
+  margin-bottom: 0.15rem;
+}
+
+.resume-award-desc {
+  font-size: var(--scale-sm);
+  color: var(--text);
+  opacity: 0.75;
+  margin-bottom: 0;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ---- Certifications ---- */
+.resume-cert {
+  margin-bottom: var(--space-sm);
+}
+
+.resume-cert:last-child {
+  margin-bottom: 0;
+}
+
+.resume-cert-title {
+  font-size: var(--scale-base);
+  font-weight: var(--weight-bold);
+  color: var(--title);
+  margin-bottom: 0.1rem;
+}
+
+.resume-cert-meta {
+  font-size: var(--scale-sm);
+  color: var(--text);
+  opacity: 0.6;
+  margin-bottom: 0;
+}
+
+/* ---- Skills ---- */
+.resume-skill {
+  margin-bottom: var(--space-sm);
+}
+
+.resume-skill:last-child {
+  margin-bottom: 0;
+}
+
+.resume-skill-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.3rem;
+}
+
+.resume-skill-name {
+  font-size: var(--scale-sm);
+  color: var(--text);
+}
+
+.resume-skill-pct {
+  font-size: var(--scale-xs);
+  color: var(--text);
+  opacity: 0.5;
+}
+
+.resume-skill-bar-track {
+  height: 2px;
+  background: var(--border);
+  width: 100%;
+}
+
+.resume-skill-bar-fill {
+  height: 2px;
+  background: var(--text);
+  opacity: 0.35;
+}
+
+/* =========================================================
+   RIGHT COLUMN — sidebar
+   ========================================================= */
+.resume-sidebar {
+  border-left: 1px solid var(--border);
+  padding-left: var(--space-lg);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  padding-right: var(--space-md);
+  min-width: 0;
+  align-self: start;
+}
+
+/* Profile image */
+.resume-profile-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: var(--space-sm);
+  opacity: 0.9;
+}
+
+/* Profile block */
+.resume-profile {
+  margin-bottom: var(--space-lg);
+}
+
+.resume-profile-name {
+  font-size: var(--scale-lg);
+  font-weight: var(--weight-bold);
+  color: var(--title);
+  margin-bottom: 0.15rem;
+  line-height: 1.2;
+}
+
+.resume-profile-tagline {
+  font-size: var(--scale-sm);
+  color: var(--text);
+  opacity: 0.6;
+  margin-bottom: 0.1rem;
+}
+
+.resume-profile-location {
+  font-size: var(--scale-sm);
+  color: var(--text);
+  opacity: 0.6;
+  margin-bottom: 0;
+}
+
+/* Contact block */
+.resume-contact {
+  margin-bottom: var(--space-lg);
+}
+
+.resume-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resume-contact-list li {
+  margin-bottom: 0.4rem;
+  line-height: var(--line-height);
+}
+
+.resume-contact-list li:last-child {
+  margin-bottom: 0;
+}
+
+.resume-contact-list a {
+  font-size: var(--scale-sm);
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+.resume-contact-list a:hover {
+  opacity: 1;
+}
+
+/* Sidebar section label */
+.resume-sidebar-heading {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--scale-xs);
+  font-weight: var(--weight-bold);
+  color: var(--text);
+  opacity: 0.75;
+  margin-bottom: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Education */
+.resume-edu-item {
+  margin-bottom: var(--space-sm);
+}
+
+.resume-edu-item:last-child {
+  margin-bottom: 0;
+}
+
+.resume-edu-degree {
+  font-size: var(--scale-sm);
+  font-weight: var(--weight-bold);
+  color: var(--title);
+  margin-bottom: 0.1rem;
+}
+
+.resume-edu-institution {
+  font-size: var(--scale-sm);
+  color: var(--text);
+  opacity: 0.6;
+  margin-bottom: 0.1rem;
+}
+
+.resume-edu-time {
+  font-size: var(--scale-xs);
+  color: var(--text);
+  opacity: 0.5;
+  margin-bottom: 0;
+}
+
+/* Interests & Languages */
+.resume-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resume-sidebar-list li {
+  font-size: var(--scale-sm);
+  color: var(--text);
+  opacity: 0.75;
+  margin-bottom: 0.3rem;
+  line-height: var(--line-height);
+}
+
+.resume-sidebar-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   SUPPRESS outbound link arrows on resume page
+   ========================================================= */
+.resume-layout a[href^="http://"]:after,
+.resume-layout a[href^="https://"]:after,
+.resume-layout a[href^="mailto:"]:after {
+  display: none !important;
+}
+
+/* =========================================================
+   RESPONSIVE — collapse to single column on mobile
+   ========================================================= */
+@media (max-width: 768px) {
+  .resume-columns {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* Move sidebar above main on mobile */
+  .resume-sidebar {
+    border-left: none;
+    border-bottom: 1px solid var(--border);
+    padding-left: var(--space-md);
+    padding-bottom: var(--space-lg);
+    order: -1;
+  }
+}

@@ -1,0 +1,194 @@
+{%- assign r = site.data.resume -%}
+<div class="resume-layout">
+  <div class="resume-columns">
+
+    <!-- =====================================================
+         LEFT COLUMN — main content
+         ===================================================== -->
+    <div class="resume-main">
+
+      <!-- About -->
+      <section class="resume-section">
+        <h2 class="resume-section-heading">
+          <!-- user icon -->
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          About
+        </h2>
+        <div class="resume-about">
+          <p>{{ r.about }}</p>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="resume-section">
+        <h2 class="resume-section-heading">
+          <!-- briefcase icon -->
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+            <line x1="12" y1="12" x2="12" y2="12"/>
+          </svg>
+          Experience
+        </h2>
+        {%- for job in r.experiences -%}
+        <div class="resume-job">
+          <div class="resume-job-header">
+            <span class="resume-job-role">{{ job.role }}</span>
+            <span class="resume-job-time">{{ job.time }}</span>
+          </div>
+          <div class="resume-job-company">{{ job.company }} &mdash; {{ job.location }}</div>
+          {%- if job.details -%}
+          <p class="resume-job-details">{{ job.details }}</p>
+          {%- endif -%}
+          {%- if job.bullets -%}
+          <ul class="resume-job-bullets">
+            {%- for bullet in job.bullets -%}
+            <li>{{ bullet }}</li>
+            {%- endfor -%}
+          </ul>
+          {%- endif -%}
+        </div>
+        {%- endfor -%}
+      </section>
+
+      <!-- Awards -->
+      <section class="resume-section">
+        <h2 class="resume-section-heading">
+          <!-- trophy icon -->
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"/>
+            <path d="M6 9a6 6 0 0 0 12 0"/>
+            <line x1="12" y1="15" x2="12" y2="22"/>
+            <line x1="8" y1="22" x2="16" y2="22"/>
+            <path d="M6 2H3a1 1 0 0 0-1 1v3a4 4 0 0 0 4 4"/>
+            <path d="M18 2h3a1 1 0 0 1 1 1v3a4 4 0 0 1-4 4"/>
+          </svg>
+          Awards
+        </h2>
+        {%- for award in r.awards -%}
+        <div class="resume-award">
+          <div class="resume-award-title">{{ award.title }}</div>
+          <div class="resume-award-org">{{ award.org }}</div>
+          <p class="resume-award-desc">{{ award.description }}</p>
+        </div>
+        {%- endfor -%}
+      </section>
+
+      <!-- Certifications -->
+      <section class="resume-section">
+        <h2 class="resume-section-heading">
+          <!-- ribbon/award icon -->
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="6"/>
+            <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+          </svg>
+          Certifications
+        </h2>
+        {%- for cert in r.certifications -%}
+        <div class="resume-cert">
+          <div class="resume-cert-title">{{ cert.title }}</div>
+          <div class="resume-cert-meta">{{ cert.issuer }} &middot; {{ cert.date }}</div>
+        </div>
+        {%- endfor -%}
+      </section>
+
+      <!-- Skills -->
+      <section class="resume-section">
+        <h2 class="resume-section-heading">
+          <!-- bar-chart icon -->
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+          Skills &amp; Proficiency
+        </h2>
+        {%- for skill in r.skills -%}
+        <div class="resume-skill">
+          <div class="resume-skill-label-row">
+            <span class="resume-skill-name">{{ skill.name }}</span>
+            <span class="resume-skill-pct">{{ skill.level }}%</span>
+          </div>
+          <div class="resume-skill-bar-track">
+            <div class="resume-skill-bar-fill" style="width: {{ skill.level }}%;"></div>
+          </div>
+        </div>
+        {%- endfor -%}
+      </section>
+
+    </div><!-- /.resume-main -->
+
+    <!-- =====================================================
+         RIGHT COLUMN — sidebar
+         ===================================================== -->
+    <aside class="resume-sidebar">
+
+      <!-- Profile -->
+      <div class="resume-profile">
+        <div class="resume-profile-name">{{ r.profile.name }}</div>
+        <div class="resume-profile-tagline">{{ r.profile.tagline }}</div>
+        {%- if r.profile.location -%}
+        <div class="resume-profile-location">{{ r.profile.location }}</div>
+        {%- endif -%}
+      </div>
+
+      <!-- Contact -->
+      <ul class="resume-contact-list">
+        {%- if r.contact.cv -%}
+        <li>
+          <a href="{{ r.contact.cv }}" target="_blank" rel="noopener" class="resume-cv-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:0.3em;margin-bottom:0.1em;">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>download cv
+          </a>
+        </li>
+        {%- endif -%}
+        {%- if r.contact.email -%}
+        <li><a href="mailto:{{ r.contact.email }}">{{ r.contact.email }}</a></li>
+        {%- endif -%}
+        {%- if r.contact.website -%}
+        <li><a href="http://{{ r.contact.website }}" target="_blank" rel="noopener">{{ r.contact.website }}</a></li>
+        {%- endif -%}
+        {%- if r.contact.linkedin -%}
+        <li><a href="https://linkedin.com/in/{{ r.contact.linkedin }}" target="_blank" rel="noopener">linkedin / {{ r.contact.linkedin }}</a></li>
+        {%- endif -%}
+        {%- if r.contact.github -%}
+        <li><a href="https://github.com/{{ r.contact.github }}" target="_blank" rel="noopener">github / {{ r.contact.github }}</a></li>
+        {%- endif -%}
+      </ul>
+
+      <!-- Education -->
+      <div class="resume-sidebar-heading">Education</div>
+      {%- for edu in r.education -%}
+      <div class="resume-edu-item">
+        <div class="resume-edu-degree">{{ edu.degree }}</div>
+        <div class="resume-edu-institution">{{ edu.institution }}</div>
+        <div class="resume-edu-time">{{ edu.time }}</div>
+      </div>
+      {%- endfor -%}
+
+      <!-- Languages -->
+      <div class="resume-sidebar-heading">Languages</div>
+      <ul class="resume-sidebar-list">
+        {%- for lang in r.languages -%}
+        <li>{{ lang.name }} <span style="opacity:0.5;">/ {{ lang.level }}</span></li>
+        {%- endfor -%}
+      </ul>
+
+      <!-- Interests -->
+      <div class="resume-sidebar-heading">Interests</div>
+      <ul class="resume-sidebar-list">
+        {%- for interest in r.interests -%}
+        <li>{{ interest }}</li>
+        {%- endfor -%}
+      </ul>
+
+    </aside><!-- /.resume-sidebar -->
+
+  </div><!-- /.resume-columns -->
+</div><!-- /.resume-layout -->

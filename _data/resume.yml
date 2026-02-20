@@ -1,0 +1,217 @@
+profile:
+  name: Shawn Mix
+  tagline: Solutions Engineer
+  location: Shelton, CT USA
+
+contact:
+  email: info@shawnmix.com
+  website: 1activegeek.com
+  linkedin: shawn-mix
+  github: 1activegeek
+  cv: https://www.icloud.com/iclouddrive/09aWUpQiJlCdAfX212odnjgag#Shawn_Mix_Resume_-_Current
+
+about: >
+  An extremely skilled sales engineer with a talent for improving processes
+  and making demonstration of product more realistic to customer environments.
+  References on request.
+
+experiences:
+  - role: Senior Sales Engineer
+    time: 2025 - Present
+    company: Sentra.io
+    location: New York, NY
+    details: >
+      A cloud-native data security platform specializing in Data Security
+      Posture Management (DSPM), providing AI-powered solutions that
+      automatically discover, classify, and monitor sensitive data across
+      multi-cloud, hybrid, and on-premises environments.
+    bullets:
+      - Execute technical assessments and pilots demonstrating platform capabilities in data inventory management, access governance, and measurable security posture improvements across diverse customer infrastructures.
+      - Establish measurable data security objectives with enterprise customers, identifying exposure gaps and implementing remediation strategies across hybrid and multi-cloud environments aligned with risk tolerance and compliance requirements.
+      - Partner with product teams to synthesize customer feedback and influence roadmap priorities addressing critical data protection gaps, compliance requirements, and emerging privacy regulations.
+      - Champion data-centric security solutions with automated discovery, intelligent classification, and real-time monitoring to provide visibility into sensitive data repositories and minimize breach and regulatory risk.
+
+  - role: Senior Sales Engineer
+    time: 2023 - 2025
+    company: Traceable AI
+    location: San Francisco, CA
+    details: >
+      A company focused on identifying, monitoring, testing, and protecting APIs.
+      Full coverage end to end of the API SDLC, ensuring customers have the
+      visibility and protection required to protect their most critical assets.
+    bullets:
+      - Helping customers develop excellent success criteria aligned with their business objectives to reduce risk of their API footprint.
+      - Evangelizing the need and requirement for a complete API security platform to protect the most critical assets and data.
+      - Responsible for conducting evaluations of the technology in customer environments to satisfy requirements and illustrate value aligned with their business drivers.
+      - Consistently work with product management to communicate enhancement requirements from customers to ensure the product will fully meet the needs of our customers and the API Security market.
+
+  - role: Senior Solutions Architect
+    time: 2021 - 2023
+    company: Noname Security
+    location: Palo Alto, CA
+    details: >
+      A company focused on proactively securing environments from API security
+      vulnerabilities, misconfigurations, design flaws, and providing API attack
+      protection with automated detection and response.
+    bullets:
+      - Providing initial demonstrations of the Noname Security platform and identifying preliminary qualifications.
+      - Creating architectural diagrams for customer designed solutions and coverage of their specific API infrastructure.
+      - Working with customers to validate the solution and execute a final summary with management to illustrate business value.
+      - Help build go-to market playbook for technical teams in deploying best of breed demos and solution delivery.
+
+  - role: Principal Sales Engineer
+    time: 2018 - 2021
+    company: Forcepoint
+    location: Austin, TX
+    details: >
+      A company focused on transforming cybersecurity by taking a human-centric
+      approach to securing critical data and assets within organizations.
+    bullets:
+      - Deliver presentations to various levels of customer users on the various solutions Forcepoint brings to the table.
+      - First line demonstrations of the value that the portfolio Forcepoint offers to prospects and customers to drive revenue.
+      - Responsible for driving customized technical demonstrations for customer use cases to avoid POC where possible.
+      - Delivering a full proof of concept inside customers live environments where required.
+
+  - role: Senior Sales Engineer
+    time: 2014 - 2018
+    company: Druva
+    location: Sunnyvale, CA
+    details: >
+      A company focused on protecting customers from data loss across endpoints,
+      servers, and cloud applications.
+    bullets:
+      - First engineer in Eastern Region responsible for building out demo practice and scripts for all Eastern sales engineering team.
+      - Troubleshooting of client/server installs and communications, including pcaps, traces, proxy configs, and interfacing with network team on firewall modifications.
+      - Consistent top performer above 100% of quota with responsibility for 5.28M in sales against a quota of 3.32M over past 2 years.
+      - 100% technical win rate for Proof of Concept engagements against competing products with technical fit.
+      - Druva Circle of Excellence Award for past 2 years.
+      - Druva Presidents Club recipient for past 2 years.
+
+  - role: Senior Sales Engineer
+    time: 2012 - 2014
+    company: WatchDox
+    location: Palo Alto, CA
+    details: >
+      A company focused on providing controlled access to important documents.
+    bullets:
+      - First engineer in the eastern region, built core demo practice and workflows.
+      - Responsible for supporting 4 directors for demo, POC, technical discussions, and driving technical evaluation process.
+      - Assisted in closure of over $3.2M in revenue in short window of just a year.
+      - SE for the teams delivering 5 of the top 10 new logos to the organization since its existence, and a multitude of Fortune 500 logos.
+      - 100% Quota attainment before FY close.
+      - Instituted a POC process and associated planning documentation for successful achievement of technical wins with customers.
+      - Deliver product presentation to a mixed audience from the most technical to C-level executive management across enterprise organizations.
+      - Identify network traffic flows to outline optimal architecture of solution to allow connectivity without bottlenecks for users both inside/outside the organization.
+
+  - role: Senior Sales Engineer
+    time: 2011 - 2012
+    company: Symantec
+    location: New York, NY
+    details: >
+      A company focused on enterprise security.
+    bullets:
+      - Instrumental in closing multiple enterprise deals all over $500k, including 260% of quota for a single fiscal year.
+      - Responsible for planning, coordinating, and executing Risk Assessment engagements with customers resulting in greater than 80% win rate.
+      - Specialized in Encryption, DLP, and User Authentication solutions.
+      - Interactive traffic monitoring with customers, involving multiple teams to understand traffic streams, and break down captures to validate proper traffic analysis.
+      - Consulting and review of network based DLP implementations -- including recommendations of best practice for optimal traffic visibility and intercepting with BlueCoat proxies for traffic blocking.
+      - Awareness across broad product offerings to provide true customer solutions, not just product suggestions, across backup and recovery, endpoint protection, mobile solutions, business continuity, GRC, and policies/procedures.
+
+  - role: Technology Consultant
+    time: 2010 - 2011
+    company: RSA
+    location: New York, NY
+    details: >
+      A company focused on enterprise security.
+    bullets:
+      - Core product sales engineer for New York Enterprise and Commercial presales team.
+      - Identify path bottlenecks involving firewalls/filtering systems intercepting traffic flows for DLP systems.
+      - Integration of 2FA for RADIUS servers to control remote access for employees.
+      - Subject matter expertise in RSA enVision Log Management solution, including integration and development of custom configurations to support other devices.
+      - Responsible for building technical relationships with customers to help back the sales process and build a trusted advisor status within an account.
+      - Helped close an $8 million dollar deal which involved selling a solution suite, instead of a single point product.
+      - Architected the largest SIEM solution for an international healthcare firm requiring a very complex setup across a large geographic scale.
+
+  - role: IT Security Admin
+    time: 2006 - 2010
+    company: United Rentals Inc
+    location: Shelton, CT
+    details: >
+      Construction rental equipment company.
+    bullets:
+      - Regular administrative tasks of all IT Security systems including Cisco IronPort Mail Filtering, Websense Web Filtering, RSA Envision SIEM, Cymtec IDS, PGP Encryption, QualysGuard VAM, Blackberry BES.
+      - Responsible for Forensic Evidence recovery, retention, and investigation.
+      - PCI DSS compliance scanning, assessment, and mitigation planning.
+      - Security review of new and existing system implementations.
+      - Creating Security Policies and Standards in conjunction with audit committee.
+      - Deployment of IDS and Managed Security Monitoring Service, reviewing events regularly and creating a weekly security report for CTO and IT Security Manager.
+      - Deployment of both Symantec (Vontu) DLP and McAfee DLP products including policy creation and alerting rules.
+      - Deployment of RSA EnVision Log Management solution including full training on management, administration, and rule building.
+      - Implementation of new Blackberry BES architecture and Security Policies with seamless migration of all 1200 users.
+      - Assist in design and architecture of vSphere 4.0 implementation to support secure VLAN trafficking and DMZ connectivity to all VMWare Hosts.
+
+awards:
+  - title: Circle of Excellence (2016)
+    org: Druva
+    description: Awarded for performance meeting or exceeding annual quotas in a single fiscal year.
+  - title: President's Club (2016)
+    org: Druva
+    description: Awarded for top sales performance in a single fiscal year. Awarded for 108% attainment of quota.
+  - title: Circle of Excellence (2015)
+    org: Druva
+    description: Awarded for performance meeting or exceeding annual quotas in a single fiscal year.
+  - title: President's Club (2015)
+    org: Druva
+    description: Awarded for top sales performance in a single fiscal year. Awarded for 172% attainment of quota.
+  - title: Achiever's Club (2012)
+    org: Symantec
+    description: Awarded for top sales performance in a single fiscal year. Awarded for 218% attainment of quota.
+
+certifications:
+  - title: Certified Information Systems Security Professional (CISSP)
+    issuer: ISC2
+    date: 2011 - Present
+  - title: Certificate of Cloud Security Knowledge (CCSK)
+    issuer: Cloud Security Alliance
+    date: Issued 2012
+  - title: Amazon Web Services Solutions Architect Associate (AWS-SAA)
+    issuer: AWS
+    date: 2021 - Present
+  - title: VMware Certified Professional (VCP)
+    issuer: VMware
+    date: 2010 - 2015
+
+skills:
+  - name: Demo & POC
+    level: 96
+  - name: Data Protection
+    level: 95
+  - name: Linux/Mac
+    level: 92
+  - name: Windows/Server
+    level: 82
+  - name: Virtualization
+    level: 80
+  - name: Networking
+    level: 75
+  - name: Cloud Infrastructure
+    level: 60
+
+education:
+  - degree: BSc in Criminal Justice
+    institution: University of New Haven
+    time: 2005 - 2007
+  - degree: BSc in Computer Information Systems (Incomplete)
+    institution: Housatonic Community College
+    time: 2002 - 2004
+
+languages:
+  - name: English
+    level: Native
+
+interests:
+  - Obstacle Course Racing
+  - Snowboarding
+  - Homelabbing
+  - Photography
+  - Travel
