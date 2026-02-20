@@ -10,6 +10,10 @@ title: Shawn Mix
 </p>
 
 <div class="card-grid">
+  <a href="/blog" class="card">
+    <h4>Blog</h4>
+    <p>Long-form writing.</p>
+  </a>
   <a href="/notes" class="card">
     <h4>Notes</h4>
     <p>Digital garden &amp; ongoing thoughts.</p>
@@ -17,10 +21,6 @@ title: Shawn Mix
   <a href="/resume" class="card">
     <h4>Resume</h4>
     <p>Experience &amp; background.</p>
-  </a>
-  <a href="/blog" class="card">
-    <h4>Blog</h4>
-    <p>Long-form writing.</p>
   </a>
   <a href="http://1activegeek.com/linkfree/" class="card" target="_blank" rel="noopener noreferrer">
     <h4>Links</h4>
