@@ -11,7 +11,6 @@
     {%- endif -%}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     {%- if page.title -%}
     <meta content="{{ page.title }}" property="og:title">
     <meta content="article" property="og:type">
@@ -101,7 +100,7 @@
                  </div>
                  <h1>{{page.title}}</h1>
                  {%- assign words = page.content | number_of_words -%}
-                 {%- assign read_mins = words | divided_by: 200 -%}
+                 {%- assign read_mins = words | divided_by: site.reading_speed -%}
                  {%- if read_mins == 0 -%}{%- assign read_mins = 1 -%}{%- endif -%}
                  <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }} &middot; {{ read_mins }} min read</p>
                  {%- include Content.html -%}

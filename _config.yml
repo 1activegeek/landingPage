@@ -14,6 +14,7 @@ preferences:
     enabled: true
 
 # Site Configuration
+reading_speed: 200   # words per minute, used for post read-time estimates
 title: "Shawn Mix"
 heading: "Shawn Mix"
 description: "Personal site, blog, and digital garden"
