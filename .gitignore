@@ -8,4 +8,3 @@ vendor/
 .DS_Store
 node_modules/
 .env
-.opencode/
