@@ -39,6 +39,9 @@
     {%- if page.content-type == "resume" -%}
     <link href="{{ site.baseurl }}/assets/css/resume.css" rel="stylesheet" media="all" />
     {%- endif -%}
+    {%- if page.content-type == "links" -%}
+    <link href="{{ site.baseurl }}/assets/css/links.css" rel="stylesheet" media="all" />
+    {%- endif -%}
 
     <!--[if IE]>
         {%- if site.ie_css -%}
@@ -121,6 +124,11 @@
             <!--- Resume Layout-->
             {%- if page.content-type == "resume" -%}
                 {%- include Resume.html -%}
+            {%- endif -%}
+
+            <!--- Links Layout-->
+            {%- if page.content-type == "links" -%}
+                {%- include Links.html -%}
             {%- endif -%}
             
             <!--- Blog Feed Layout-->

@@ -22,7 +22,7 @@ title: Shawn Mix
     <h4>Resume</h4>
     <p>Experience &amp; background.</p>
   </a>
-  <a href="http://1activegeek.com/linkfree/" class="card" target="_blank" rel="noopener noreferrer">
+  <a href="/links" class="card">
     <h4>Links</h4>
     <p>Around the web.</p>
   </a>

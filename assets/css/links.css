@@ -1,0 +1,135 @@
+/* =========================================================
+   LINKS PAGE — Mobile-first Linktree-style layout
+   Shares CSS variables with style.css (Catppuccin)
+   ========================================================= */
+
+/* =========================================================
+   PAGE WRAPPER
+   ========================================================= */
+.links-page {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  padding-bottom: var(--space-xl);
+}
+
+/* =========================================================
+   PROFILE BLOCK
+   ========================================================= */
+.links-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-lg) 0 var(--space-xl);
+  gap: var(--space-xs);
+}
+
+.links-avatar {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.links-profile-name {
+  font-size: var(--scale-lg);
+  font-weight: var(--weight-bold);
+  color: var(--title);
+  line-height: var(--line-height);
+}
+
+.links-profile-tagline {
+  font-size: var(--scale-base);
+  font-weight: var(--weight-medium);
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.links-profile-location {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: var(--scale-meta);
+  font-weight: var(--weight-light);
+  color: var(--text);
+  opacity: 0.55;
+}
+
+.links-profile-location svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* =========================================================
+   LINK BUTTONS LIST
+   ========================================================= */
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.links-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  padding: 0.85rem var(--space-md);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--bg2);
+  color: var(--text);
+  text-decoration: none;
+  font-size: var(--scale-base);
+  font-weight: var(--weight-medium);
+  line-height: var(--line-height);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  /* Suppress global external link arrow on the wrapper */
+  position: relative;
+}
+
+/* Suppress the global ::after external-link arrow */
+.links-btn::after {
+  display: none !important;
+}
+
+.links-btn:hover {
+  background-color: rgba(137, 180, 250, 0.22);
+  border-color: rgba(137, 180, 250, 0.4);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.links-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  opacity: 0.75;
+  color: var(--text);
+}
+
+.links-btn-label {
+  flex: 1;
+  text-align: center;
+  /* center the label between icon and the icon-width on the right
+     so text appears visually centered in the button */
+  padding-right: 18px;
+}
+
+/* =========================================================
+   RESPONSIVE — already narrow, just ensure comfortable
+   padding on very small screens
+   ========================================================= */
+@media (max-width: 420px) {
+  .links-page {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+}
