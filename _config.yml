@@ -30,6 +30,15 @@ css_file: "/assets/css/style.css"
 # Menu — empty; navigation is handled by the landing page card grid
 menu: []
 
+# Personal links — single source of truth; referenced via site.links.* everywhere
+links:
+  github:          "https://github.com/1activegeek"
+  linkedin:        "https://www.linkedin.com/in/shawn-mix/"
+  kofi:            "https://ko-fi.com/shawnmix"
+  paypal:          "https://www.paypal.com/paypalme/shawnmix/3"
+  resume_download: "https://www.icloud.com/iclouddrive/09aWUpQiJlCdAfX212odnjgag#Shawn_Mix_Resume_-_Current"
+  website:         "https://1activegeek.com"
+
 # Footer — minimal, no copyright/credits
 footer:
   copyright: ""

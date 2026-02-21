@@ -4,9 +4,6 @@ layout: Post
 content-type: "static"
 permalink: /about
 ---
-
-## About Me
-
 <!-- Profile photo — replace with actual image path -->
 <!-- ![Shawn Mix](/assets/img/profile.jpg) -->
 

@@ -368,7 +368,34 @@ a:hover {
 }
 
 .footer-left {
-  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.footer-left a {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.5;
+  text-decoration: none;
+  color: var(--text);
+  transition: opacity 0.15s ease;
+}
+
+.footer-left a:hover {
+  opacity: 1;
+}
+
+.footer-right a {
+  font-size: var(--scale-sm);
+  opacity: 0.5;
+  text-decoration: none;
+  color: var(--text);
+  transition: opacity 0.15s ease;
+}
+
+.footer-right a:hover {
+  opacity: 1;
 }
 
 /* =========================================================

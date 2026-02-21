@@ -204,11 +204,8 @@ permalink: /slug
 ## Future Work
 
 - Design and implement a proper monogram/initials SVG logo to replace the placeholder square in the top-left nav
-- Build a Links page (`/links`) as a specialized layout — similar to the Notes feed (no search), but each entry has a URL and a short description snippet; replaces the current external LinkTree redirect
-- Add in a "credits" link bottom right like source repo - use for linking to people I owe credit to - career, inspiration, this page, etc
-- Footer for connecting: simple outline logos (GitHub, LinkedIn, Buy Me a Coffee / PayPal), right-aligned
-- Deployment config — GitHub Pages with custom domain `shawnmix.com` (remove Cloudflare redirect rule pointing shawnmix.com → shawnmix.info first)
 - Real Obsidian notes sync
+- Fix site favicon, and spacing after hyphen in name in browser tab - or just replace with just my Name or LandingPage
 
 ---
 

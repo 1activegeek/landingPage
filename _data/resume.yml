@@ -8,7 +8,7 @@ contact:
   website: 1activegeek.com
   linkedin: shawn-mix
   github: 1activegeek
-  cv: https://www.icloud.com/iclouddrive/09aWUpQiJlCdAfX212odnjgag#Shawn_Mix_Resume_-_Current
+  # cv download URL is managed via site.links.resume_download in _config.yml
 
 about: >
   An extremely skilled sales engineer with a talent for improving processes
