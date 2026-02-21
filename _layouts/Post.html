@@ -25,9 +25,8 @@
     {%- if site.apple_touch_icon -%}
     <link rel="apple-touch-icon" href="{{ site.baseurl }}{{ site.apple_touch_icon }}">
     {%- endif -%}
-    {%- if site.favicon -%}
-    <link rel="icon" href="{{ site.baseurl }}{{ site.favicon }}" type="image/svg+xml" sizes="any" />
-    {%- endif -%}
+    <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/img/favicon.png" type="image/png" />
     {%- if site.css_file -%}
     <link href="{{ site.baseurl }}{{ site.css_file }}" rel="stylesheet" media="all" class="default" />
     {%- else -%}
