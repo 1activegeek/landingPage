@@ -6,6 +6,12 @@
 /* =========================================================
    PAGE WRAPPER
    ========================================================= */
+
+/* Pull the whole page closer to the nav */
+.container:has(.links-page) {
+  padding-top: var(--space-sm);
+}
+
 .links-page {
   width: 100%;
   max-width: 380px;
@@ -21,7 +27,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--space-lg) 0 var(--space-xl);
+  padding: var(--space-sm) 0 var(--space-lg);
   gap: var(--space-xs);
 }
 
