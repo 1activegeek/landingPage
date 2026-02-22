@@ -6,7 +6,7 @@ title: Shawn Mix
 
 <p>
   <strong class="site-title">Shawn Mix</strong><br>
-  Technology leader, builder, and tinkerer. I work at the intersection of infrastructure, platform engineering, and product strategy — focused on building systems and teams that deliver real value. <span class="small-link"><a href="/about">more</a></span>
+  Cybersecurity Practitioner, builder, and tinkerer. I work at the intersection of infrastructure, security engineering, and product strategy — focused on building systems and programs that deliver real value. <span class="small-link"><a href="/about">more</a></span>
 </p>
 
 <div class="card-grid">
