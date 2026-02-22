@@ -7,11 +7,6 @@
    PAGE WRAPPER
    ========================================================= */
 
-/* Pull the whole page closer to the nav */
-.container:has(.links-page) {
-  padding-top: var(--space-sm);
-}
-
 .links-page {
   width: 100%;
   max-width: 380px;

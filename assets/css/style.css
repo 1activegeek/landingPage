@@ -105,6 +105,9 @@ body {
 }
 
 .nav-left a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   color: var(--title);
 }
@@ -374,6 +377,7 @@ a:hover {
 }
 
 .footer-left a {
+  position: relative;
   display: inline-flex;
   align-items: center;
   opacity: 0.5;
@@ -387,6 +391,7 @@ a:hover {
 }
 
 .footer-right a {
+  position: relative;
   font-size: var(--scale-sm);
   opacity: 0.5;
   text-decoration: none;
@@ -402,6 +407,7 @@ a:hover {
    THEME TOGGLE (nav-right)
    ========================================================= */
 .theme-toggle {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -681,6 +687,44 @@ img {
 }
 
 /* =========================================================
+   UI TOOLTIPS (nav & footer icons)
+   Uses ::before to avoid conflict with external-link ::after arrows.
+   data-tooltip="Label" on any element shows a centered tip above it.
+   ========================================================= */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: var(--scale-xs);
+  font-weight: var(--weight-medium);
+  line-height: var(--line-height);
+  color: var(--text);
+  background-color: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 8px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+  z-index: 100;
+}
+
+[data-tooltip]:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/* =========================================================
    WIKI LINKS & TOOLTIPS
    ========================================================= */
 .tooltip {
@@ -800,7 +844,7 @@ a[href^="https://"]:after {
   background-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%2019L19%205M5%205h14v14%22%20stroke%3D%22%23cdd6f4%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
 }
 
-/* Suppress on nav, footer, search, feeds */
+/* Suppress external-link arrow on nav, footer, search, feeds */
 .nav-left a:after,
 .footer a:after,
 .search-result:after,
