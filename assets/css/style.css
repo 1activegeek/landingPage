@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@700&display=swap');
 
 /* =========================================================
    CATPPUCCIN LATTE — Light mode
@@ -114,6 +114,38 @@ body {
 
 .nav-left a:hover {
   color: var(--title);
+}
+
+.nav-initials {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: var(--weight-bold);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--title);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-initials::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 0.1em);
+  transform: translateY(-50%);
+  height: 0.16em; /* ~10% of S height (1.6rem) */
+  background: var(--bg);
+  pointer-events: none;
+}
+
+.nav-initial-s {
+  font-size: 1.6rem; /* 80% of 2rem */
+}
+
+.nav-initial-m {
+  font-size: 2rem;
 }
 
 .nav-right {
@@ -428,6 +460,15 @@ a:hover {
   width: 17.5px;
   height: 17.5px;
 }
+
+/* Half-and-half theme toggle icon */
+/* Dark mode: left=light text color, right=surface (visible against dark bg) */
+[data-theme="dark"] .icon-left  { fill: #cdd6f4; } /* Mocha Text */
+[data-theme="dark"] .icon-right { fill: #45475a; } /* Mocha Surface 1 */
+
+/* Light mode: left=dark text color, right=surface (visible against light bg) */
+:root:not([data-theme="dark"]) .icon-left  { fill: #4c4f69; } /* Latte Text */
+:root:not([data-theme="dark"]) .icon-right { fill: #ccd0da; } /* Latte Surface 0 */
 
 /* =========================================================
    MARKDOWN

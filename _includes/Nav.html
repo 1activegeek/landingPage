@@ -1,15 +1,16 @@
 <nav class="nav">
   <div class="nav-left">
     <a href="{{ site.baseurl }}/" aria-label="Home" data-tooltip="Home">
-      <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <rect x="8" y="8" width="16" height="16" rx="4" />
-      </svg>
+      <span class="nav-initials"><span class="nav-initial-s">S</span><span class="nav-initial-m">M</span></span>
     </a>
   </div>
   <div class="nav-right">
     <button class="theme-toggle" aria-label="Toggle dark mode" data-tooltip="Toggle theme">
-      <svg viewBox="0 0 14 14" width="17.5" height="17.5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="7" cy="7" r="5"/>
+      <svg viewBox="0 0 14 14" width="17.5" height="17.5" xmlns="http://www.w3.org/2000/svg" class="theme-icon">
+        <!-- Left half: arc from bottom to top (dark side in dark mode) -->
+        <path class="icon-left" d="M7,2 A5,5 0 0,0 7,12 Z"/>
+        <!-- Right half: arc from top to bottom (light side in dark mode) -->
+        <path class="icon-right" d="M7,2 A5,5 0 0,1 7,12 Z"/>
       </svg>
     </button>
   </div>
