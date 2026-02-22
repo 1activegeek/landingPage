@@ -19,20 +19,42 @@
 <script>
   const themeToggle = document.querySelector('.theme-toggle');
   const root = document.documentElement;
+  const systemMQ = window.matchMedia('(prefers-color-scheme: dark)');
 
-  function setTheme(theme) {
-    root.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+  // Apply the visual theme based on stored preference
+  function applyTheme(stored) {
+    if (stored === 'system') {
+      root.setAttribute('data-theme', systemMQ.matches ? 'dark' : 'light');
+    } else {
+      root.setAttribute('data-theme', stored);
+    }
+    themeToggle.setAttribute('aria-label', 'Theme: ' + stored);
+    themeToggle.setAttribute('data-tooltip', stored.charAt(0).toUpperCase() + stored.slice(1));
   }
 
+  // Cycle: dark → light → system → dark
   themeToggle.addEventListener('click', function () {
     root.classList.add('theme-transition');
     document.body.classList.add('theme-transition');
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    setTheme(isDark ? 'light' : 'dark');
+
+    const currentVisual = root.getAttribute('data-theme');
+    const next = currentVisual === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', next);
+    applyTheme(next);
+
     setTimeout(function () {
       root.classList.remove('theme-transition');
       document.body.classList.remove('theme-transition');
     }, 300);
   });
+
+  // Follow OS changes in real time when set to system
+  systemMQ.addEventListener('change', function () {
+    if ((localStorage.getItem('theme') || 'dark') === 'system') {
+      root.setAttribute('data-theme', systemMQ.matches ? 'dark' : 'light');
+    }
+  });
+
+  // Sync tooltip/aria-label with current stored preference on load
+  applyTheme(localStorage.getItem('theme') || 'system');
 </script>

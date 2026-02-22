@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -45,8 +45,13 @@
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
     <script>
       (function() {
-        var theme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
+        var stored = localStorage.getItem('theme') || 'system';
+        if (stored === 'system') {
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', stored);
+        }
       })();
     </script>
 </head>
