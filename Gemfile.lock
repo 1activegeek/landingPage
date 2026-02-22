@@ -13,7 +13,6 @@ GEM
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
-    execjs (2.8.1)
     ffi (1.17.3)
     forwardable-extended (2.6.0)
     google-protobuf (4.33.5)
@@ -28,8 +27,6 @@ GEM
     google-protobuf (4.33.5-x86_64-linux-gnu)
       bigdecimal
       rake (>= 13)
-    htmlbeautifier (1.3.1)
-    htmlcompressor (0.4.0)
     http_parser.rb (0.8.1)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
@@ -58,20 +55,11 @@ GEM
       sass-embedded (~> 1.75)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-tidy (0.2.2)
-      htmlbeautifier
-      htmlcompressor
-      jekyll
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     json (2.18.1)
-    katex (0.8.0)
-      execjs (~> 2.7)
     kramdown (2.3.1)
       rexml
-    kramdown-math-katex (1.0.1)
-      katex (~> 0.4)
-      kramdown (~> 2.0)
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     liquid (4.0.4)
@@ -116,8 +104,6 @@ DEPENDENCIES
   jekyll (~> 4.3)
   jekyll-feed (~> 0.17)
   jekyll-sitemap
-  jekyll-tidy
-  kramdown-math-katex
   webrick (~> 1.8)
 
 BUNDLED WITH
