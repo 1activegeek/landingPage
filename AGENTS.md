@@ -201,10 +201,49 @@ permalink: /slug
 
 ---
 
+## Notes Publishing Pipeline
+
+Notes in `_notes/Public/` are **not edited directly**. They are synced automatically from the lifeOS Obsidian vault (iCloud) via a Python script. The Obsidian vault is the single source of truth.
+
+**To publish a note from Obsidian:** Add `publish: true` to the note's frontmatter. The sync runs every 20 minutes automatically, or can be triggered on-demand via QuickAdd inside Obsidian.
+
+**To un-publish a note:** Set `publish: false`. The next sync will delete the file from this repo.
+
+**Full pipeline documentation:** `SOP - Notes Publishing Pipeline` in the Obsidian vault at `3 Resources/SOPs/`.
+
+**Sync script (source of truth):** `lifeOS/3 Resources/scripts/sync_to_jekyll.py`
+
+**Do not manually edit files in `_notes/Public/`** — changes will be overwritten on the next sync.
+
+### Sync Wrapper (for re-creation)
+
+If the launchd wrapper at `~/scripts/run-jekyll-sync.sh` is lost, recreate it with:
+
+```bash
+#!/usr/bin/env bash
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
+
+SYNC_SCRIPT="/Users/shawnmix/Library/Mobile Documents/iCloud~md~obsidian/Documents/lifeOS/3 Resources/scripts/sync_to_jekyll.py"
+
+if [[ ! -f "$SYNC_SCRIPT" ]]; then
+    brctl download "$SYNC_SCRIPT" 2>/dev/null || true
+    sleep 3
+    if [[ ! -f "$SYNC_SCRIPT" ]]; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR: sync_to_jekyll.py not found" >&2
+        exit 1
+    fi
+fi
+
+exec python3 "$SYNC_SCRIPT" --scheduled "$@"
+```
+
+Then: `chmod +x ~/scripts/run-jekyll-sync.sh && launchctl load ~/Library/LaunchAgents/com.shawnmix.jekyll-sync.plist`
+
+---
+
 ## Future Work
 
 - Design and implement a proper monogram/initials SVG logo to replace the placeholder square in the top-left nav
-- Real Obsidian notes sync
 - Fix site favicon, and spacing after hyphen in name in browser tab - or just replace with just my Name or LandingPage
 
 ---
