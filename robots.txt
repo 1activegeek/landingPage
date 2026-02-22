@@ -1,0 +1,7 @@
+---
+---
+User-agent: *
+Disallow: /resume
+Disallow: /links
+
+Sitemap: {{ site.url }}/sitemap.xml

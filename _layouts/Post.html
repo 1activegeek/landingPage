@@ -22,6 +22,9 @@
 
     <title>{%- if page.permalink == "/" -%}Home - {{ site.heading }}{%- elsif page.title -%}{{ page.title }} - {{ site.heading }}{%- else -%}{{ site.heading }}{%- endif -%}</title>
     <link rel="canonical" href="{{site.url}}{{page.url}}" />
+    {%- if page.noindex -%}
+    <meta name="robots" content="noindex, nofollow" />
+    {%- endif -%}
     {%- if site.apple_touch_icon -%}
     <link rel="apple-touch-icon" href="{{ site.baseurl }}{{ site.apple_touch_icon }}">
     {%- endif -%}
