@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@700&display=swap');
-
 /* =========================================================
    CATPPUCCIN LATTE — Light mode (CSS default)
    ========================================================= */
 :root {
+  color-scheme: light dark;
   --bg: #eff1f5;        /* Latte Base */
   --bg2: #e6e9ef;       /* Latte Mantle */
   --text: #4c4f69;      /* Latte Text */
@@ -72,24 +71,20 @@
 }
 
 /* =========================================================
-   THEME TRANSITION GUARDS
-   - .no-transition: applied on page load, removed after first
-     paint to prevent any flash/fade on initial render.
-   - .theme-transition: applied by JS during toggle for smooth
-     switching; removed after the animation completes.
+   THEME TRANSITION
+   Applied by JS only during user-initiated toggle clicks.
+   Scoped to the elements that actually change — html/body for
+   background and text color, icon paths for fill.
+   Nothing else needs its own transition since colors propagate
+   via CSS variables instantly.
    ========================================================= */
-.no-transition,
-.no-transition *,
-.no-transition *::before,
-.no-transition *::after {
-  transition: none !important;
+html.theme-transition,
+html.theme-transition body {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-.theme-transition,
-.theme-transition *,
-.theme-transition *::before,
-.theme-transition *::after {
-  transition: background 0.3s, color 0.3s, border-color 0.3s, fill 0.3s !important;
+html.theme-transition .icon-left,
+html.theme-transition .icon-right {
+  transition: fill 0.3s ease;
 }
 
 /* =========================================================

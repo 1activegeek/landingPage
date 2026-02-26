@@ -9,8 +9,13 @@
     {%- if site.og_image -%}
     <meta property="og:image" content="{{ site.baseurl }}{{ site.og_image }}">
     {%- endif -%}
+    <!-- color-scheme must be before CSS so the browser UA stylesheet
+         adopts the correct background before any stylesheet loads. -->
+    <meta name="color-scheme" content="light dark">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Load fonts via <link> (parallel with style.css) not @import (sequential). -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@700&display=swap">
     {%- if page.title -%}
     <meta content="{{ page.title }}" property="og:title">
     <meta content="article" property="og:type">
@@ -48,24 +53,10 @@
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
     <script>
       (function() {
-        var d = document.documentElement;
-        // Block transitions until after first paint
-        d.classList.add('no-transition');
-        // Only set data-theme if user has explicitly chosen.
-        // If absent, CSS @media (prefers-color-scheme) handles it — zero flash.
         var stored = localStorage.getItem('theme');
         if (stored === 'dark' || stored === 'light') {
-          d.setAttribute('data-theme', stored);
-        }
-        // Remove no-transition after first paint
-        if (window.requestAnimationFrame) {
-          requestAnimationFrame(function() {
-            requestAnimationFrame(function() {
-              d.classList.remove('no-transition');
-            });
-          });
-        } else {
-          setTimeout(function() { d.classList.remove('no-transition'); }, 0);
+          document.documentElement.setAttribute('data-theme', stored);
+          document.querySelector('meta[name="color-scheme"]').setAttribute('content', stored);
         }
       })();
     </script>
