@@ -17,44 +17,42 @@
 </nav>
 
 <script>
-  const themeToggle = document.querySelector('.theme-toggle');
-  const root = document.documentElement;
-  const systemMQ = window.matchMedia('(prefers-color-scheme: dark)');
+  (function () {
+    var toggle = document.querySelector('.theme-toggle');
+    var root = document.documentElement;
 
-  // Apply the visual theme based on stored preference
-  function applyTheme(stored) {
-    if (stored === 'system') {
-      root.setAttribute('data-theme', systemMQ.matches ? 'dark' : 'light');
-    } else {
-      root.setAttribute('data-theme', stored);
+    // Determine the current effective theme (what the user actually sees)
+    function getEffective() {
+      var attr = root.getAttribute('data-theme');
+      if (attr === 'dark' || attr === 'light') return attr;
+      // No attribute — CSS @media is in control, check what OS says
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
-    themeToggle.setAttribute('aria-label', 'Theme: ' + stored);
-    themeToggle.setAttribute('data-tooltip', stored.charAt(0).toUpperCase() + stored.slice(1));
-  }
 
-  // Cycle: dark → light → system → dark
-  themeToggle.addEventListener('click', function () {
-    root.classList.add('theme-transition');
-    document.body.classList.add('theme-transition');
-
-    const currentVisual = root.getAttribute('data-theme');
-    const next = currentVisual === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', next);
-    applyTheme(next);
-
-    setTimeout(function () {
-      root.classList.remove('theme-transition');
-      document.body.classList.remove('theme-transition');
-    }, 300);
-  });
-
-  // Follow OS changes in real time when set to system
-  systemMQ.addEventListener('change', function () {
-    if ((localStorage.getItem('theme') || 'dark') === 'system') {
-      root.setAttribute('data-theme', systemMQ.matches ? 'dark' : 'light');
+    // Update tooltip to reflect what's shown
+    function updateTooltip() {
+      var effective = getEffective();
+      var label = effective === 'dark' ? 'Dark' : 'Light';
+      toggle.setAttribute('aria-label', 'Theme: ' + label);
+      toggle.setAttribute('data-tooltip', label);
     }
-  });
 
-  // Sync tooltip/aria-label with current stored preference on load
-  applyTheme(localStorage.getItem('theme') || 'system');
+    // Toggle: dark ↔ light
+    toggle.addEventListener('click', function () {
+      // Enable smooth transition
+      root.classList.add('theme-transition');
+
+      var next = getEffective() === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', next);
+      root.setAttribute('data-theme', next);
+      updateTooltip();
+
+      setTimeout(function () {
+        root.classList.remove('theme-transition');
+      }, 300);
+    });
+
+    // Set initial tooltip (theme was already applied by head script or CSS @media)
+    updateTooltip();
+  })();
 </script>

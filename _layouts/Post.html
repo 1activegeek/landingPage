@@ -48,12 +48,24 @@
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
     <script>
       (function() {
-        var stored = localStorage.getItem('theme') || 'system';
-        if (stored === 'system') {
-          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+        var d = document.documentElement;
+        // Block transitions until after first paint
+        d.classList.add('no-transition');
+        // Only set data-theme if user has explicitly chosen.
+        // If absent, CSS @media (prefers-color-scheme) handles it — zero flash.
+        var stored = localStorage.getItem('theme');
+        if (stored === 'dark' || stored === 'light') {
+          d.setAttribute('data-theme', stored);
+        }
+        // Remove no-transition after first paint
+        if (window.requestAnimationFrame) {
+          requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+              d.classList.remove('no-transition');
+            });
+          });
         } else {
-          document.documentElement.setAttribute('data-theme', stored);
+          setTimeout(function() { d.classList.remove('no-transition'); }, 0);
         }
       })();
     </script>
