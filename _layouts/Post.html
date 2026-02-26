@@ -51,7 +51,11 @@
     {%- endif -%}
 
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
-    <script>
+    <!-- data-cfasync="false" opts this script out of Cloudflare Rocket Loader.
+         Rocket Loader defers ALL scripts by rewriting their type attribute,
+         which destroys the blocking behavior this script depends on.
+         This script MUST run synchronously before first paint. -->
+    <script data-cfasync="false">
       (function() {
         var stored = localStorage.getItem('theme');
         if (stored === 'dark' || stored === 'light') {
