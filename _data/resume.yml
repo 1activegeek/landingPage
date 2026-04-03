@@ -17,7 +17,23 @@ about: >
 
 experiences:
   - role: Senior Sales Engineer
-    time: 2025 - Present
+    time: 2026 - Present
+    company: Proofpoint
+    location: New York, NY
+    details: >
+      Proofpoint is a global leader in human- and agent-centric cybersecurity.
+      We protect how people, data, and AI agents connect across email, cloud,
+      and collaboration tools. Our mission is simple: safeguard the digital
+      world and empower people to work securely and confidently.
+    bullets:
+      - Drive high levels of customer satisfaction 
+      - Collaborate with the ATG Sales Specialists & Account Teams to develop and execute targeted account penetration strategies  
+      - Build trust and rapport with customers and prospects in person, and be their main technical point of contact throughout the process  
+      - Work closely with customers/prospects for technical discovery, as well as planning, execution and wrap up of Proof-of-Concept (POC) and Production Evaluations 
+      - Design and champion complex People-Centric Security solutions encompassing the Data Security portfolio, including a full Data Loss Prevention suite (email, endpoint, cloud and web), Insider Risk and Data Security Posture Management
+  
+  - role: Senior Sales Engineer
+    time: 2025 - 2026
     company: Sentra.io
     location: New York, NY
     details: >
